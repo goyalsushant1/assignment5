@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Area of Circle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        h3{
+            position: absolute;
+            font-size: 30px;
+            top : 20%;
+        }
+        form{
+            position: absolute;
+            font-size: 20px;
+            top: 35%;
+            border: 2px solid #dddddd;
+            height: 25%;
+            border-radius: 40px;
+            width: 35%;
+            background: linear-gradient(to top right, #9999ff 27%, #ffff00 100%);
+        }
+        div
+        {
+            position: relative;
+            top: 50%;
+            left: 35%;
+            transform: translateY(-50%);
+            border-radius: 40px;
+        }
+        label{
+            position: relative;
+        }
+        input[type="text"]{
+            position: relative;
+            border-radius: 5px;
+            border: 2px solid #1313be;
+            height: 25px;
+            display: block;
+            margin-top: 2%;
+        }
+        input[type="submit"]{
+            position: relative;
+            border-radius: 5px;
+            border: 2px solid #1313be;
+            height: 25px;
+            margin-top: 2%;
+        }
+        #result{
+            position: absolute;
+            top : 60%;
+        }
+    </style>
+    <script>
+        function calculate(){
+            var radius = document.getElementById('radius').value;
+            var result = 3.14*radius*radius;
+            document.getElementById('result').innerHTML = "The area of circle is " + Math.round(result*100)/100;
+            //alert('The area of the circle is '+Math.round(result*100)/100);
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h3>To calculate the area of circle.</h3>
+    <form onsubmit="return calculate()">
+        <div>
+            <label for="radius">Enter the radius :</label>
+            <input id="radius" type="text" placeholder="  Enter the radius" name="radius" required>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <h4 id="result"></h4>
+</body>
+</html>

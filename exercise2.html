@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Palindrome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        h3{
+            position: absolute;
+            font-size: 30px;
+            top : 25%;
+        }
+        #si{
+            position: absolute;
+            font-size: 20px;
+            top: 35%;
+        }
+        #result{
+            position: absolute;
+            font-size: 20px;
+            top: 45%;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var flag=1;
+            var result;
+            var str = prompt('Enter the string');
+            for(i=0;i<str.length/2;i++)
+            {
+                if(str[i]!=str[str.length-i-1])
+                {
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==1)
+            {
+                result="palindrome";
+                alert('Palindrome')
+            }
+            if(flag==0)
+            {
+                result="not a palindrome";
+                alert('Not a Palindrome')
+            }
+            document.getElementById('si').innerHTML = "Input String : " + str;
+            document.getElementById('result').innerHTML = "Input String is " + result;
+        }
+    </script>
+</head>
+<body>
+    <h3>To check if string is palindrome or not.</h3>
+    <h4 id="si"></h4>
+    <h4 id="result"></h4>
+</body>
+</html>

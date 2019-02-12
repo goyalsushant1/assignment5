@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Map and Filter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        h3{
+            position: absolute;
+            font-size: 30px;
+            top : 20%;
+        }
+        ul{
+            position: absolute;
+            font-size: 20px;
+            top: 35%;
+        }
+    </style>
+    <script>
+        var list_employee = [
+            {
+                'name' : 'Aman',
+                'age' : 19,
+                'DOB' : '15/06/1999',
+                'salary' : 500
+            },
+            {
+                'name' : 'Rahul',
+                'age' : 21,
+                'DOB' : '3/08/1997',
+                'salary' : 900
+            },
+            {
+                'name' : 'Sushant',
+                'age' : 21,
+                'DOB' : '20/08/1997',
+                'salary' : 4000
+            },
+            {
+                'name' : 'Rohit',
+                'age' : 24,
+                'DOB' : '6/02/95',
+                'salary' : 6000
+            },
+            {
+                'name' : 'Vaibhav',
+                'age' : 28,
+                'DOB' : '10/08/91',
+                'salary' : 8000
+            }
+        ]
+        var filter_salary_greater = list_employee.filter((list_employee)=> list_employee.salary>5000)
+        console.log(filter_salary_greater);
+
+        var group_employee_age = {};
+        for (var i = 0; i < list_employee.length; i++) {
+            if (group_employee_age.hasOwnProperty(list_employee[i].age)) {
+                group_employee_age[list_employee[i].age].push(list_employee[i]);
+            }
+            else {
+                group_employee_age[list_employee[i].age] = [];
+                group_employee_age[list_employee[i].age].push(list_employee[i]);
+            }
+        }
+        console.log(group_employee_age);
+
+        var filter_employee = list_employee.filter((list_employee) => list_employee.age > 20 && list_employee.salary < 1000).map((i) => {
+            i.salary = i.salary * 5
+            return i;
+        })
+        console.log(filter_employee);
+    </script>
+</head>
+<body>
+    <h3>create a list of objects of Employee with info as follow:</h3>
+    <ul>
+        <li>Name, age, salary ,DOB</li>
+        <li>filter all employees with salary greater than 5000</li>
+        <li>group employee on the basis of their age</li>
+        <li>fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.</li>
+    </ul>
+    <h4 id="result"></h4>
+</body>
+</html>

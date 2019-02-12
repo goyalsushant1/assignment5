@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Interest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            display: flex;
+            justify-content: space-around;
+        }
+        h3{
+            position: absolute;
+            font-size: 30px;
+            top : 25%;
+            text-align: center;
+        }
+        h4{
+            position: absolute;
+            font-size: 20px;
+            top: 40%;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var pa = prompt('Enter the amount');
+            var r = prompt('Enter rate of interest');
+            var t = prompt('Enter the time');
+            if(pa==""||r==""||t=="")
+            {
+                document.getElementById('si').innerHTML =  "Refresh your page and enter details again";                
+            }
+            else
+            {
+                var si = (pa*r*t)/100;
+                document.getElementById('si').innerHTML= "The Simple Interest is " + si;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Prompt for amount, interest rate and no. of years and calculate simple interest.</h3>
+    <h4 id="si"></h4>
+</body>
+</html>
